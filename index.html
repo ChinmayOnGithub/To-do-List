@@ -8,7 +8,52 @@
 </head>
 
 <body>
-    <h1>To-Do List</h1>
+    <h1 onclick="chai()">To-Do List</h1>
+    <h2>A place where you can be </h2>
+
+    <div class="card">
+        <ul>
+            <li>Chaitanya</li>
+            <li>chinmay</li>
+            <li>ok</li>
+            <li>nice</li>
+            <li><strike>good</strike></li>
+        </ul>
+    </div>
+
+    <!-- check boxes -->
+    <div>
+
+        <input type="checkbox" id="task1" class="all_checkbox" onclick="removeItem('task1_label')">
+        <label for="task1" id="task1_label">Chaitanya</label>
+
+        <input type="checkbox" onclick="removeItem('task2_label')" id="task2" class="all_checkbox">
+        <label for="task2" id="task2_label">Chinmay</label>
+
+
+
+    </div>
+
+    <script>
+        function removeItem(labelID) {
+            let label = document.getElementById(labelID);
+
+            if (label.style.textDecoration === "line-through") {
+                label.style.textDecoration = "none";
+                label.style.color = "black";
+
+            } else {
+                label.style.textDecoration = "line-through";
+                label.style.color = "green";
+
+            }
+        }
+
+
+
+    </script>
+
+    <script src="./assets/scripts/script.js"></script>
 </body>
 
 </html>

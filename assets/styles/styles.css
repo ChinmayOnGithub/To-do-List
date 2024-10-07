@@ -1,4 +1,18 @@
 div div, button {
     display: block;
+}
+
+.title {
+    color: black;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.tasks-template {
+    width: fit-content;
+    padding: 20px;
+    display: block;
+    border: solid black 0.1px;
+    border-radius: 10px;
     margin-left: 32px;
+    background-color: azure;
 }

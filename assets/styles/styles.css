@@ -1,10 +1,15 @@
+
+
 div div, button {
     display: block;
 }
 
 .title {
     color: black;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    font-family: 'ClashGrotesk-Regular', Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 .tasks-template {

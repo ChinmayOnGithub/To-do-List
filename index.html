@@ -13,7 +13,7 @@
     <h2>A place where you can be most productive! </h2>
 
     <!-- check boxes -->
-    <div>
+    <div class="tasks-template">
         <div> <input type="checkbox" id="task1" class="all_checkbox" onclick="removeItem('task1_label')">
             <label for="task1" id="task1_label">Chaitanya</label>
         </div>
@@ -39,9 +39,12 @@
             } else {
                 label.style.textDecoration = "line-through";
                 label.style.color = "green";
-
             }
         }
+
+        // function addNewTask() {
+        //     document.getElementsByClassName("tasks-template")
+        // }
 
 
 

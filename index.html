@@ -27,25 +27,25 @@
     <div class="all-tasks">
 
         <!-- check boxes -->
-        <div class="tasks-template">
-            <h3 class="list-title">Title</h3>
-            <div> <input type="checkbox" id="task1" class="all_checkbox" onclick="removeItem('task1_label')">
-                <label for="task1" id="task1_label">Chaitanya</label>
-            </div>
+        <div class="card">
 
-            <div>
-                <input type="checkbox" onclick="removeItem('task2_label')" id="task2" class="all_checkbox">
-                <label for="task2" id="task2_label">Chinmay</label>
+            <div class="tasks-template">
+
+                <h3 class="list-title">Title</h3>
+                <div> <input type="checkbox" id="task1" class="all_checkbox" onclick="removeItem('task1_label')">
+                    <label for="task1" id="task1_label">Chaitanya</label>
+                </div>
             </div>
 
             <button onclick="addNewTask()">+ Add new task</button>
-
         </div>
-
     </div>
 
 
-    <script>
+    <script>let task_count = 1;
+
+
+
         function removeItem(labelID) {
             let label = document.getElementById(labelID);
 
@@ -57,11 +57,38 @@
                 label.style.textDecoration = "line-through";
                 label.style.color = "green";
             }
+
+
+
         }
 
-        // function addNewTask() {
-        //     document.getElementsByClassName("tasks-template")
-        // }
+        function addNewTask() {
+            const taskTemplate = document.getElementsByClassName("tasks-template")[0];
+
+            task_count++;
+
+            const newDiv = document.createElement("div");
+
+            const newCheckbox = document.createElement("input");
+            newCheckbox.type = "checkbox";
+            newCheckbox.id = "task_new" + task_count;
+
+            const newLabel = document.createElement("label");
+            newLabel.setAttribute("for", "task_new");
+            newLabel.id = "task" + task_count + "_label";
+            newLabel.innerText = "New task";
+
+
+            newDiv.appendChild(newCheckbox);
+            newDiv.appendChild(newLabel);
+
+            taskTemplate.appendChild(newDiv);
+
+            newCheckbox.addEventListener('click', function () {
+                removeItem(newLabel.id);
+            });
+
+        }
 
 
 

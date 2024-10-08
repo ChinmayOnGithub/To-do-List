@@ -50,7 +50,7 @@ body {
     width: 100%;
 }
 
-.tasks-template {
+.card {
     width: fit-content;
     height: fit-content;
     padding: 20px;
@@ -59,6 +59,10 @@ body {
     border-radius: 10px;
     margin-left: 32px;
     background-color: azure;
+}
+
+.tasks-template {
+    margin: 0px;
 }
 
 .list-title {

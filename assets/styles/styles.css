@@ -68,3 +68,6 @@ body {
 .list-title {
     margin: 4px;
 }
+.to-do_input_text {
+    : none;
+}

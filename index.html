@@ -5,29 +5,39 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>To-do List</title>
-
     <link rel="stylesheet" href="./assets/styles/styles.css">
 
 </head>
 
 <body>
-    <h1 class="title">To-Do List</h1>
-    <h2>A place where you can be most productive! </h2>
-
-    <!-- check boxes -->
-    <div class="tasks-template">
-        <div> <input type="checkbox" id="task1" class="all_checkbox" onclick="removeItem('task1_label')">
-            <label for="task1" id="task1_label">Chaitanya</label>
+    <div class="nav">
+        <div class="title-group">
+            <h1 class="title">To-Do List</h1>
+            <h2 class="subtitle">A place where you can be most productive! </h2>
         </div>
-
-        <div>
-            <input type="checkbox" onclick="removeItem('task2_label')" id="task2" class="all_checkbox">
-            <label for="task2" id="task2_label">Chinmay</label>
-        </div>
-
-        <button onclick="addNewTask()">+ Add new task</button>
 
     </div>
+
+    <div class="all-tasks">
+
+        <!-- check boxes -->
+        <div class="tasks-template">
+            <h3 class="list-title">Title</h3>
+            <div> <input type="checkbox" id="task1" class="all_checkbox" onclick="removeItem('task1_label')">
+                <label for="task1" id="task1_label">Chaitanya</label>
+            </div>
+
+            <div>
+                <input type="checkbox" onclick="removeItem('task2_label')" id="task2" class="all_checkbox">
+                <label for="task2" id="task2_label">Chinmay</label>
+            </div>
+
+            <button onclick="addNewTask()">+ Add new task</button>
+
+        </div>
+
+    </div>
+
 
     <script>
         function removeItem(labelID) {

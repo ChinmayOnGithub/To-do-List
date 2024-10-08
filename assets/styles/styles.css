@@ -1,23 +1,66 @@
-
-
-div div, button {
-    display: block;
-}
-
-.title {
-    color: black;
+html {
+    font-size: 16px;
+    margin: 0px;
 }
 
 body {
-    font-family: 'ClashGrotesk-Regular', Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    height: 100vh;
+    margin: 0px;
+    background-color: beige;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.nav {
+    height: auto;
+    background-color: #cacaca;
+    display: flex;
+    justify-content: space-between
+}
+
+
+.title {
+    margin: 8px;
+    text-align: center;
+    color: black;
+    font-size: 2rem;
+}
+
+.subtitle {
+    color: grey;
+    text-align: center;
+    font-size: 1rem;
+    margin: 16px;
+}
+
+.profile {
+    
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    border: solid black 1px;
+}
+
+
+
+.all-tasks {
+    display: flex;
+    justify-content: center;
+    padding-top: 36px;
+    height: 100vh;
+    width: 100%;
 }
 
 .tasks-template {
     width: fit-content;
+    height: fit-content;
     padding: 20px;
     display: block;
     border: solid black 0.1px;
     border-radius: 10px;
     margin-left: 32px;
     background-color: azure;
+}
+
+.list-title {
+    margin: 4px;
 }

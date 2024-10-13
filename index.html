@@ -12,9 +12,9 @@
     <!-- Header -->
     <header>
         <div class="bg-yellow-400 flex justify-between items-center p-3 w-full">
-            <div class="text-center flex-grow">
-                <h1 class="font-bold text-3xl">To~Do List</h1>
-                <h2 class="text-gray-800">A place where you can be most productive!</h2>
+            <div class="text-left sm:text-center sm:flex-grow">
+                <h1 class="font-bold sm:text-3xl text-2xl">To~Do List</h1>
+                <h2 class="text-gray-800 text-xs sm:text-base  ">A place where you can be most productive!</h2>
             </div>
 
             <div class="flex items-center">
@@ -40,24 +40,24 @@
             <div class="flex items-center mb-2">
                 <input type="checkbox" id="task1"
                     class="rounded-full focus:ring-1 focus:ring-orange-500 w-5 h-5 focus:outline-none cursor-pointer mr-2 checked:accent-violet-700"
-                    onclick="removeItem('task1_label')" />
-                <label for="task1" id="task1_label" class="flex-grow">
-                    <input type="text"
-                        class="p-1 border rounded-md w-full bg-orange-100 placeholder:text-gray-600 border-none focus:outline-none"
-                        placeholder="Enter your task here" />
+                    onclick="removeItem('task1_label') />
+                <label for=" task1" id="task1_label" class="flex-grow">
+                <input type="text"
+                    class="p-1 border rounded-md w-full bg-orange-100 placeholder:text-gray-600 border-none focus:outline-none"
+                    placeholder="Enter your task here" onkeydown="handleKeyDown(event, 'task1_label')"" />
                 </label>
             </div>
 
-            <button onclick="addNewTask()"
-                class="text-xs bg-orange-500 text-white px-4 py-2 rounded hover:bg-red-700 transition">
+            <button onclick=" addNewTask()"
+                    class="text-xs bg-orange-500 text-white px-4 py-2 rounded hover:bg-red-700 transition">
                 &plus; Add new task
-            </button>
+                </button>
+            </div>
+
+
         </div>
 
-
-    </div>
-
-    <script src="./assets/scripts/script.js"></script>
+        <script src="./assets/scripts/script.js"></script>
 </body>
 
 </html>

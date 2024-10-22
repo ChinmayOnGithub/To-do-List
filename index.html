@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="./assets/styles/output.css" />
 </head>
 
-<body class="bg-gray-900 w-full grid min-h-screen grid-rows-[auto,1fr,auto] grid-cols-[minmax(200px,250px),1fr] gap-1">
+<body class="bg-gray-900 grid min-h-screen grid-rows-[auto,1fr] grid-cols-[1fr,5fr] gap-0 relative">
     <!-- Header -->
     <header class="col-span-2 grid-flow-col">
         <div class="bg-yellow-400 flex justify-between items-center p-3 w-full max-h-24">
@@ -21,7 +21,7 @@
 
             <div class="flex items-center">
                 <button
-                    class="bg-yellow-500 text-white font-bold text-xs px-4 py-2 rounded-full hover:bg-yellow-100 hover:text-yellow-400 transition-all">
+                    class="bg-yellow-500 text-white font-bold text-xs sm:text-sm px-4 py-2 rounded-full hover:bg-yellow-100 hover:text-yellow-400 transition-all">
                     Sync
                 </button>
 
@@ -33,9 +33,14 @@
     </header>
 
     <!-- Side Bar -->
-    <aside class="text-center bg-gray-700 text-white p-4 sm:block hidden">
+    <aside class="col-span-1 bg-gray-700 text-white p-4 hidden sm:block text-center sticky top-0">
         <ul>
-            <h2 class="text-center text-xl font-bold mb-2">Side bar here</h2>
+            <h2 class="text-center text-xl font-bold mb-2">Welcome!</h2>
+            <!-- Floating Button for New List -->
+            <button id="floating-new-list-button"
+                class="bg-gray-500 h-fit w-full p-4 rounded-xl text-center text-sm text-white cursor-pointer hover:bg-gray-700 transition mb-2">+
+                New List<img>
+            </button>
             <li class="hover:bg-gray-600 rounded-xl m-2 p-2 transition">TAG1</li>
             <li class="hover:bg-gray-600 rounded-xl m-2 p-2 transition">TAG2</li>
             <li class="hover:bg-gray-600 rounded-xl m-2 p-2 transition">TAG3</li>
@@ -43,39 +48,31 @@
     </aside>
 
     <!-- Main Content -->
-    <main class="col-span-2 sm:col-span-1">
-        <!-- Card -->
-        <div class="all-tasks">
-            <!-- Checkboxes Section -->
-            <div class="bg-orange-200 m-4 rounded-md p-4 w-fit flex-row relative">
-                <h3 class="ml-4 text-2xl font-bold relative mb-4">Title</h3>
+    <main class="col-span-2 sm:col-span-1 p-4">
 
-                <div class="flex items-center mb-2">
-                    <input type="checkbox" id="task1" class="rounded-full focus:ring-1
-            focus:ring-orange-500 w-5 h-5 focus:outline-none cursor-pointer mr-2
-            checked:accent-violet-700" onclick="removeItem('task1_label')" />
-
-                    <label for="task1" id="task1_label" class="flex-grow">
-                        <input type="text"
-                            class="p-1 border rounded-md w-full bg-orange-200 placeholder:text-gray-600 border-none focus:outline-none"
-                            placeholder="Enter your task here" onkeydown="handleKeyDown(event, 'task1_label')" />
-                    </label>
-                </div>
-
-                <button onclick="addNewTask()"
-                    class="text-xs bg-orange-500 text-white px-4 py-2 rounded hover:bg-red-700 transition">
-                    &plus; Add new task
-                </button>
-
-                <div
-                    class="bg-orange-900 w-9 h-9 absolute bottom-0 right-0 m-2 rounded-full hover:bg-orange-700 text-white transition">
-                </div>
+        <!-- Placeholder for when no cards are present -->
+        <div id="placeholder" class="flex flex-col items-center justify-center min-h-[calc(100vh-160px)] text-center">
+            <p class="text-white text-xl mb-4">No lists to display. Create your first list now!</p>
+            <div id="new-list-button"
+                class="bg-gray-500 h-fit w-fit p-4 rounded-lg text-center text-sm text-white cursor-pointer hover:bg-gray-700 transition">
+                Create New List
             </div>
+        </div>
+
+        <!-- Container for dynamically added lists -->
+        <!-- grid grid-cols-1 gap-4 p-4 -->
+        <!-- grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-4 -->
+        <div id="task-container" class="flex flex-wrap gap-4 p-4 justify-center place-items-center h-full">
+            <!-- Cards will be dynamically added here -->
         </div>
     </main>
 
+
+
+
     <!-- Footer -->
-    <footer class="text-white font-serif flex place-content-end place-items-end col-span-2 p-4 bg-gray-800 text-center">
+    <footer
+        class="col-span-2 p-4 text-white font-serif flex justify-end items-center bg-gray-800 bottom-0 left-0 w-full">
         &copy; by Chinmay
     </footer>
 

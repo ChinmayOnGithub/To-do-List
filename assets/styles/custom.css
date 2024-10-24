@@ -1,0 +1,6 @@
+.min-w-screen {
+    min-width: 10240px;
+    /* Set your desired minimum width */
+    overflow-x: hidden;
+    /* Prevent horizontal scrolling */
+}

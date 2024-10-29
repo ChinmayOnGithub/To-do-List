@@ -17,7 +17,6 @@ function updatePlaceholderVisibility() {
 
 document.addEventListener("DOMContentLoaded", function () {
 
-
     function addNewTask(listContainerId) {
         const taskContainer = document.createElement("div");
         taskContainer.classList.add("flex", "items-center", "mb-1", "p-0", "bg-transparent", "rounded-md", "w-full");
@@ -47,7 +46,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function createCard(taskContainer) {
 
-
         const card = document.createElement("div");
         card.classList.add(
             "bg-orange-200",
@@ -76,17 +74,18 @@ document.addEventListener("DOMContentLoaded", function () {
         `).join('');
 
         card.innerHTML = `
-        <div class="flex justify-between">
-            <!-- Color Options -->
-            <div class="flex mb-4 gap-2 flex-grow">
-                ${colorButtons}
-            </div>
+        <div class="flex m-0 p-0 justify-end">
+            
             <!-- Delete Button -->
             <img class="delete-card m-1" src="./assets/images/close-square-svgrepo-com.svg" alt="close button" width="20" height="20">
         </div>
         <input type="text" class="w-full mb-4 p-2 text-lg font-bold bg-transparent border border-gray-600 rounded-lg focus:outline-none placeholder:text-gray-600 text-gray-800" placeholder="Enter list name" />
         <div id="${cardId}" class="task-list flex-col mb-2"></div>
         <button class="add-task-button bg-slate-700 text-white px-4 py-2 rounded hover:bg-slate-800 transition mt-2">+ Add new task</button>
+        <!-- Color Options -->
+            <div class="flex mt-4 gap-2 flex-grow ">
+                ${colorButtons}
+            </div>
         `;
 
         taskContainer.appendChild(card);
@@ -110,6 +109,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Add event listener for delete button
         card.querySelector(".delete-card").addEventListener("click", function () {
+            // ask for the conformation
+            /* 
+            HERE
+            */
             card.remove();
             updatePlaceholderVisibility();
         });
@@ -127,91 +130,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
         createCard(taskContainer); // Call the createCard function
     });
-
-    // document.getElementById("new-list-button").addEventListener("click", function () {
-    //     const taskContainer = document.getElementById("task-container");
-    //     taskContainer.classList.remove("hidden");
-
-    //     const card = document.createElement("div");
-    //     card.classList.add(
-    //         "bg-orange-200",
-    //         "rounded-lg",
-    //         "p-4",
-    //         "span-1",
-    //         "w-full",
-    //         "relative",
-    //         "shadow-md",
-    //         "max-w-sm",
-
-    //         "overflow-y-auto"
-    //     );
-
-    //     card.style.height = "fit-content";
-    //     card.style.minWidth = "200px";
-    //     card.style.maxWidth = "250px";
-    //     card.style.maxHeight = "700px";
-    //     card.style.minHeight = "auto";
-    //     card.style.columnSpan = "2";
-
-
-    //     card.style.backgroundColor = colors[1]; // Default color
-    //     const cardId = `card-${Math.random().toString(36).substr(2, 9)}`;
-
-
-    //     // Generate color buttons
-    //     const colorButtons = colors.map((color) => `
-    //         <button class="color-option w-6 h-6  rounded-full border cursor-pointer" data-color="${color}" style="background-color: ${color};"></button>
-    //     `).join('');
-
-    //     card.innerHTML = `
-    //         <div class="flex justify-between">
-    //             <!-- Color Options -->
-    //             <div class="flex gap-2 flex-grow">
-    //                 ${colorButtons}
-    //             </div>
-    //             <!-- Delete Button -->
-
-    //             <img class="delete-card" src="./assets/images/close-square-svgrepo-com.svg" alt="close button" width="32" height="32">
-
-    //         </div>
-
-    //         <input type="text" class="w-full mb-4 p-2 text-lg font-bold bg-transparent border border-gray-600 rounded-lg focus:outline-none placeholder:text-gray-600 text-gray-800" placeholder="Enter list name" />
-
-    //         <div id="${cardId}" class="task-list flex-col mb-2">
-
-    //             </div>
-    //         </div>
-
-    //         <button class="add-task-button bg-slate-700 text-white px-4 py-2 rounded hover:bg-slate-800 transition mt-2">
-    //             + Add new task
-    //         </button>
-    //     `;
-
-    //     taskContainer.appendChild(card);
-
-    //     updatePlaceholderVisibility();
-
-
-    //     // Add event listener for color buttons
-    //     card.querySelectorAll(".color-option").forEach(function (colorButton) {
-    //         colorButton.addEventListener("click", function () {
-    //             card.style.backgroundColor = colorButton.dataset.color;
-    //         });
-    //     });
-
-    //     // Add event listener for delete button
-    //     card.querySelector(".delete-card").addEventListener("click", function () {
-    //         card.remove();
-    //         updatePlaceholderVisibility();
-    //     });
-
-    //     // Add event listener for the dynamically created 'Add new task' button
-    //     card.querySelector(".add-task-button").addEventListener("click", function () {
-    //         addNewTask(cardId);
-    //     });
-
-    //     document.getElementById("placeholder").style.display = "none";
-    // });
 
     document.getElementById("floating-new-list-button").addEventListener("click", function () {
         document.getElementById("placeholder").style.display = "none";

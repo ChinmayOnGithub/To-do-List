@@ -45,7 +45,7 @@
 
     <!-- Side Bar -->
     <aside
-        class="max-h-svh mt-24 mb-24 col-span-1 bg-gray-700 text-white p-4 hidden sm:block text-center sticky top-0 rounded-xl">
+        class="max-h-svh mt-24 mb-24 col-span-1 bg-gray-700 text-white p-6 hidden sm:block text-center sticky top-24 rounded-xl">
         <ul>
             <h2 class="text-center text-xl font-bold mb-2">Welcome!</h2>
             <!-- Floating Button for New List -->
@@ -65,22 +65,20 @@
 
         <!-- Placeholder for when no cards are present -->
         <div id="placeholder" class="flex flex-col items-center justify-center min-h-[calc(100vh-160px)] text-center">
-            <p class="text-white text-xl mb-4">No lists to display. Create your first list now!</p>
-            <div id="new-list-button"
+            <h1 class="text-white text-xl mb-4">No lists to display. Create your first list now!</h1>
+            <button id="new-list-button"
                 class="bg-gray-500 h-fit w-fit p-4 rounded-2xl text-center text-sm text-white cursor-pointer hover:bg-gray-700 transition">
                 Create New List
-            </div>
+            </button>
         </div>
 
+        <!-- Floating fixed button to add new list -->
         <button id="floating-new-list-button"
-            class="hidden absolute mb-20 text-4xl bottom-0 right-0 m-4 z-20 bg-gray-500 h-16 w-16 p-2 rounded-full text-center text-white cursor-pointer hover:bg-gray-700 transition">+
+            class="hidden fixed mb-20 text-4xl bottom-0 right-0 m-4 z-20 bg-gray-500 h-16 w-16 p-2 rounded-full text-center text-white cursor-pointer hover:bg-gray-700 transition">+
         </button>
 
         <!-- Container for dynamically added lists -->
-        <!-- grid grid-cols-1 gap-4 p-4 -->
-        <!-- grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-4 -->
         <div id="task-container" class="flex flex-row flex-wrap items-start justify-start gap-4 p-4 h-full min-w-full">
-            <!-- justify-center place-items-center -->
             <!-- Cards will be dynamically added here -->
         </div>
 

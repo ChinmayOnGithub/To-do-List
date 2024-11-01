@@ -50,6 +50,8 @@ document.addEventListener("DOMContentLoaded", function () {
         card.classList.add(
             "bg-orange-200",
             "rounded-lg",
+            "border-2",
+            "border-white",
             "p-4",
             "span-1",
             "w-full",
@@ -75,16 +77,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
         card.innerHTML = `
         <!-- Delete button -->
-        <div class="flex m-0 p-0 justify-end">
+        <div class="absolute bottom-0.5 right-0.5">
             <!-- Delete Button -->
-            <img class="delete-card m-1" src="./assets/images/close-square-svgrepo-com.svg" alt="close button" width="20" height="20">
+            <img class="delete-card m-1 " src="./assets/images/close-square-svgrepo-com.svg" alt="close button" width="20" height="20">
         </div>
         <!-- Input title -->
         <input type="text" class="w-full mb-4 p-2 text-lg font-bold bg-transparent border border-gray-600 rounded-lg focus:outline-none placeholder:text-gray-600 text-gray-800" placeholder="Enter list name" />
         <!-- Card List -->
         <div id="${cardId}" class="task-list flex-col mb-2"></div>
         
-        <button class="add-task-button bg-slate-700 text-white px-4 py-2 rounded hover:bg-slate-800 transition mt-2">+ Add new task</button>
+        <button class="add-task-button bg-slate-700 text-white px-4 py-2 rounded-2xl hover:bg-slate-800 transition mt-2">+ Add new task</button>
         <!-- Color Options -->
             <div class="flex mt-4 gap-2 flex-grow ">
                 ${colorButtons}

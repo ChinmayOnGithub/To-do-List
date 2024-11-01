@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
         <input type="checkbox" id="${taskId}" class="rounded-full bg-transparent focus:ring-1 focus:ring-orange-500 w-5 h-5 cursor-pointer m-0 mr-2">
 
         <label for="${taskId}" class="flex-grow">
-        <input type="text" class="p-1 border rounded-md w-full bg-transparent placeholder:text-gray-600 text-white border-none focus:outline-none" placeholder="Enter your task here" style="background-color: transparent; color: white;" />
+        <input type="text" class="p-0 border rounded-md w-full bg-transparent placeholder:text-gray-700 text-white border-none focus:outline-none" placeholder="Enter your task here" style="background-color: transparent; color: white;" />
         `;
 
         const cardContainer = document.getElementById(listContainerId);
@@ -82,7 +82,7 @@ document.addEventListener("DOMContentLoaded", function () {
             <img class="delete-card m-1 " src="./assets/images/close-square-svgrepo-com.svg" alt="close button" width="20" height="20">
         </div>
         <!-- Input title -->
-        <input type="text" class="w-full mb-4 p-2 text-lg font-bold bg-transparent border border-gray-600 rounded-lg focus:outline-none placeholder:text-gray-600 text-gray-800" placeholder="Enter list name" />
+        <input type="text" class="title-list-each-input w-full mb-2 p-2 text-2xl font-bold bg-transparent border border-gray-600 rounded-lg focus:outline-none placeholder:text-gray-600 text-gray-800 " placeholder="Enter list name" />
         <!-- Card List -->
         <div id="${cardId}" class="task-list flex-col mb-2"></div>
         

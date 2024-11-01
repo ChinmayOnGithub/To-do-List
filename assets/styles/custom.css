@@ -4,3 +4,7 @@
     overflow-x: hidden;
     /* Prevent horizontal scrolling */
 }
+
+.title-list-each-input:not(:placeholder-shown) {
+    border: none;
+}

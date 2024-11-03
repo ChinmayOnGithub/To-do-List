@@ -7,4 +7,108 @@
 
 .title-list-each-input:not(:placeholder-shown) {
     border: none;
+    /* Remove border when the input is not empty */
+}
+
+/* Large screen-specific rules */
+#side-bar {
+    width: 200px;
+    /* Set a width for the sidebar */
+    opacity: 1;
+    /* Full opacity when visible */
+    visibility: visible;
+    /* Start as visible */
+    transition: width 0.3s ease, opacity 0.3s ease;
+    /* Transition for width and opacity */
+}
+
+#side-bar.hidden {
+    width: 0px;
+    /* Set width to a small value instead of 0 */
+    opacity: 0;
+    /* Make it transparent */
+    visibility: hidden;
+    /* Hide from view without removing from flow */
+}
+
+.custom-card {
+    background-color: #fbbf24;
+    /* Default color */
+    border: 2px solid #fff;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    max-width: 250px;
+    min-width: 200px;
+    max-height: 700px;
+}
+
+.custom-title {
+    width: 100%;
+    margin-bottom: 0.5rem;
+    padding: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border: 1px solid #4b5563;
+    background-color: transparent;
+    color: #1f2937;
+}
+
+.custom-add-task-button {
+    background-color: #1e293b;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+    margin-top: 0.5rem;
+    transition: background-color 0.3s;
+}
+
+.custom-add-task-button:hover {
+    background-color: #0f172a;
+    /* Darken background on hover */
+}
+
+.custom-color-options {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.custom-color-button {
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    border: 1px solid #000;
+    cursor: pointer;
+}
+
+.placeholder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    color: gray;
+}
+
+/* CSS for Sidebar */
+#side-bar {
+    transition: transform 0.3s ease-in-out;
+    /* Smooth transition for the sidebar */
+    transform: translateX(0);
+    /* Initial position */
+}
+
+#side-bar.hidden {
+    transform: translateX(-100%);
+    /* Move sidebar out of view */
+}
+
+/* Additional custom styles for button hover effects */
+.custom-color-button:hover {
+    opacity: 0.8;
+    /* Slightly dim color buttons on hover */
+}
+
+.custom-add-task-button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    /* Highlight on hover */
 }

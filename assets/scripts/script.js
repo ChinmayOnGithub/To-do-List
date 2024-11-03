@@ -115,11 +115,11 @@ document.addEventListener("DOMContentLoaded", function () {
         // Add event listener for delete button
         card.querySelector(".delete-card").addEventListener("click", function () {
             // ask for the conformation
-            /* 
-            HERE
-            */
-            card.remove();
-            updatePlaceholderVisibility();
+
+            if (confirm("Are you sure you want to delete this card?")) {
+                card.remove();
+                updatePlaceholderVisibility();
+            }
         });
 
         // Add event listener for the dynamically created 'Add new task' button
